@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-Station Navigator | 最寄り駅が複数ある人のための乗り換え案内</title>
+    <meta name="description" content="複数の最寄り駅から目的地までの最適なルートを一度に比較・確認できる乗り換え案内サービス。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="logo.png" alt="W-Station Logo" class="app-logo">
+            </div>
+            <h1 id="app-title">W-Station Navigator</h1>
+            <p class="subtitle">2つの最寄り駅を使い分ける、賢いあなたのためのルート検索</p>
+        </header>
+
+        <section class="search-card">
+            <form id="search-form">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="station1">最寄り駅 1</label>
+                        <div class="input-wrapper">
+                            <span class="icon">🚉</span>
+                            <input type="text" id="station1" placeholder="例: 渋谷駅" required>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="station2">最寄り駅 2</label>
+                        <div class="input-wrapper">
+                            <span class="icon">🚉</span>
+                            <input type="text" id="station2" placeholder="例: 代々木公園駅" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <div class="line"></div>
+                    <div class="arrow">↓</div>
+                </div>
+
+                <div class="dest-field">
+                    <label for="destination">目的地</label>
+                    <div class="input-wrapper">
+                        <span class="icon">📍</span>
+                        <input type="text" id="destination" placeholder="例: 東京駅" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="search-button">
+                    <span class="btn-text">ルートを検索する</span>
+                    <span class="btn-icon">🚀</span>
+                </button>
+            </form>
+        </section>
+
+        <section id="results-area" class="results-area hidden">
+            <div class="results-header">
+                <h2>検索結果</h2>
+                <div class="destination-display">
+                    行き先: <span id="display-dest">---</span>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card" id="card-1">
+                    <div class="card-header">
+                        <span class="station-tag">ルート 1</span>
+                        <h3 id="display-station1">---</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>この駅からのルートを確認します。</p>
+                        <div class="action-buttons">
+                            <a href="#" target="_blank" class="map-link google" id="google-link-1">Google マップ</a>
+                            <a href="#" target="_blank" class="map-link yahoo" id="yahoo-link-1">Yahoo! 乗換案内</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card" id="card-2">
+                    <div class="card-header">
+                        <span class="station-tag">ルート 2</span>
+                        <h3 id="display-station2">---</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>もう一つの駅からのルートを確認します。</p>
+                        <div class="action-buttons">
+                            <a href="#" target="_blank" class="map-link google" id="google-link-2">Google マップ</a>
+                            <a href="#" target="_blank" class="map-link yahoo" id="yahoo-link-2">Yahoo! 乗換案内</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compare-actions">
+                <button id="open-all" class="secondary-button">両方のGoogleマップを一括で開く</button>
+            </div>
+        </section>
+
+        <section class="usage-info">
+            <h3>使い方</h3>
+            <ul>
+                <li><strong>2つの最寄り駅</strong>を入力します（例: 渋谷駅 と 代々木公園駅）。</li>
+                <li><strong>行き先</strong>を入力します（例: 東京駅）。</li>
+                <li>「ルートを検索する」ボタンを押すと、それぞれの駅からの検索リンクが生成されます。</li>
+                <li>「Google マップ」や「Yahoo! 乗換案内」で、実際の時間や運賃を確認できます。</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 W-Station Navigator. Optimized for your daily commute.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
