@@ -33,19 +33,21 @@
         <section class="search-card">
             <form id="search-form">
                 <div class="input-group">
-                    <div class="input-field">
+                    <div class="input-field" style="position: relative;">
                         <label for="station1">最寄り駅 1</label>
                         <div class="input-wrapper">
                             <span class="icon">🚉</span>
-                            <input type="text" id="station1" placeholder="例: 渋谷駅" required>
+                            <input type="text" id="station1" placeholder="例: 渋谷駅" required autocomplete="off">
                         </div>
+                        <div class="suggestions" id="suggestions-s1"></div>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field" style="position: relative;">
                         <label for="station2">最寄り駅 2</label>
                         <div class="input-wrapper">
                             <span class="icon">🚉</span>
-                            <input type="text" id="station2" placeholder="例: 代々木公園駅" required>
+                            <input type="text" id="station2" placeholder="例: 代々木公園駅" required autocomplete="off">
                         </div>
+                        <div class="suggestions" id="suggestions-s2"></div>
                     </div>
                 </div>
 
@@ -54,11 +56,20 @@
                     <div class="arrow">↓</div>
                 </div>
 
-                <div class="dest-field">
+                <div class="dest-field" style="position: relative;">
                     <label for="destination">目的地</label>
                     <div class="input-wrapper">
                         <span class="icon">📍</span>
-                        <input type="text" id="destination" placeholder="例: 東京駅" required>
+                        <input type="text" id="destination" placeholder="例: 東京駅" required autocomplete="off">
+                    </div>
+                    <div class="suggestions" id="suggestions-dest"></div>
+                </div>
+
+                <div class="time-field" style="margin-top: 1.5rem;">
+                    <label for="travel-time">出発時間 (指定しない場合は現在時刻)</label>
+                    <div class="input-wrapper">
+                        <span class="icon">🕒</span>
+                        <input type="time" id="travel-time">
                     </div>
                 </div>
 
